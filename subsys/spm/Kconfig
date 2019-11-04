@@ -57,6 +57,15 @@ config SPM_SERVICE_RNG
 	  The Non-Secure Firmware is not allowed to use the crypto hardware.
 	  This service allows it to request random numbers from the SPM.
 
+config SPM_SERVICE_CC310_CRYPTO
+	bool "CC310 Crypto"
+	default y
+	select NORDIC_SECURITY_BACKEND
+	select FLOAT
+	help
+	  The Non-Secure Firmware is not allowed to use the crypto hardware.
+	  This service allows it to perform crypto operations via the SPM.
+
 config SPM_SERVICE_READ
 	bool "Read from memory"
 	default y

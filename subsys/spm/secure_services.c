@@ -43,7 +43,7 @@ int spm_secure_services_init(void)
 {
 	int err = 0;
 
-#ifdef CONFIG_SPM_SERVICE_RNG
+#if defined(CONFIG_SPM_SERVICE_RNG) || defined(CONFIG_SPM_SERVICE_CC310_CRYPTO)
 	mbedtls_platform_context platform_ctx = {0};
 	err = mbedtls_platform_setup(&platform_ctx);
 #endif
